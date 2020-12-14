@@ -1,0 +1,33 @@
+image:
+  registry: b2b-docker-registry.cloud.ext.systems
+  pullSecrets:
+    - regcred
+  repository: bitnami/postgresql
+  tag: 11.10.0-debian-10-r24
+  pullPolicy: IfNotPresent
+
+postgresqlUsername: postgres
+postgresqlPassword: jhfg76jkdfdf76
+postgresqlDatabase: postgresdb
+
+service:
+  type: ClusterIP
+  port: 5432
+
+persistence:
+  enabled: true
+  mountPath: /bitnami/postgresql
+  storageClass: slow-3-v2
+  accessModes:
+    - ReadWriteOnce
+  size: 8Gi
+updateStrategy:
+  type: RollingUpdate
+
+resources:
+  requests:
+    memory: 256Mi
+    cpu: 250m
+  limits:
+    memory: 512Mi
+    cpu: 500m

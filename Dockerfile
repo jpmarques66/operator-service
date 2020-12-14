@@ -15,9 +15,12 @@ RUN apk add --no-cache --update\
     python3 \
     python3-dev \
     postgresql-dev \
-  && pip install virtualenv
+  && pip install virtualenv gunicorn
 
 COPY . /operator-service
+RUN adduser -S opservice -h /operator-service -u 1000
+RUN chown opservice /operator-service
+USER opservice
 WORKDIR /operator-service
 
 RUN pip install .

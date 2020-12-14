@@ -6,7 +6,7 @@ metadata:
     app: postgres
 data:
   POSTGRES_DB: postgresdb
-  POSTGRES_USER: postgresadmin
+  POSTGRES_USER: postgres
   POSTGRES_PASSWORD: jhfg76jkdfdf76
-  POSTGRES_HOST: postgres.ocean-operator.svc.cluster.local
+  POSTGRES_HOST: postgres-postgresql.ocean-operator-6a138.svc.cluster.local
   POSTGRES_PORT: "5432"
