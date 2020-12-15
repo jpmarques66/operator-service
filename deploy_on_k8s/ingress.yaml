@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: b2bmarketplace
+  labels:
+    app: operator-api
+  name: operator-api
+spec:
+  rules:
+  - host: b2bmarketplace-operator.cloud.ext.systems
+    http:
+      paths:
+      - backend:
+          serviceName: operator-api-service
+          servicePort: 8050
+        path: /
+  tls:
+  - hosts:
+    - b2bmarketplace-operator.cloud.ext.systems
