@@ -1,6 +1,6 @@
 [resources]
 operator.url = http://0.0.0.0:8050
-namespace = ocean-compute
+namespace = ocean-operator-6a138
 group = oceanprotocol.com
 version = v1alpha
 plural = workflows
